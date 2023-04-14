@@ -1,0 +1,43 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.post-form{
+  align-items: center;
+  top: 50px;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.post-input{
+  padding: 5px 0 0 10px;
+  position: relative;
+  border: 1px solid lavender;
+  border-radius: 5px;
+  width: 400px;
+  height: 150px;
+  resize:none;
+  outline: none;
+}
+.post-button{
+  color: gainsboro;
+  margin-top: 10px;
+  left: 140px;
+  position: relative;
+  border-radius: 5px;
+  background: midnightblue;
+  width: 120px;
+  height: 40px;
+}
+.post-button:hover{
+  background: darkblue;
+}
+.uploaded-posts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 10px 0;
+}

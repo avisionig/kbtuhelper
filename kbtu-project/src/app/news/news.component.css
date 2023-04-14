@@ -1,0 +1,54 @@
+*, *::before, *::after {
+  box-sizing: inherit;
+  touch-action: inherit;
+}
+h1{
+  padding: 100px;
+  text-align: center;
+  font-family:"PlantinMTPro",serif,sans-serif;;
+  font-size: 40px;
+  font-weight: lighter;
+}
+strong{
+  outline: 0;
+  font-family: "PlantinMTPro",serif,sans-serif;
+}
+.container{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 40px;
+}
+.news{
+  margin-left: 30px;
+  display: flex;
+  font-weight: lighter;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 0;
+}
+
+span{
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  outline: 0;
+  font-family: "PlantinMTPro",serif,sans-serif;
+  font-size: 30px;
+
+}
+.line{
+  border-left: 1px solid lightgrey;
+  height: 300px;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+time{
+  font-size: 20px;
+  color: darkgrey;
+}

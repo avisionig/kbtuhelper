@@ -1,0 +1,8 @@
+.container{
+  padding: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+.inputs{
+  padding-left: 30px;
+}

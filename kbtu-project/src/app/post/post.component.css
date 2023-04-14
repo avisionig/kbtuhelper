@@ -1,0 +1,10 @@
+.post-border{
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid lavender;
+}
+button{
+  color:red;
+}
