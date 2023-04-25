@@ -2,7 +2,27 @@
   padding: 40px;
   display: flex;
   align-items: flex-start;
+  border-radius: 8px;
+  flex-direction: row;
 }
+.inputs{
+  margin-left: 20px;
+  padding: 30px;
+}
+input,.inputs,img,button {
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+button {
+  background-color: darkblue;
+  padding: 10px;
+  width: 150px;
+  color: white;
+  margin: 20px;
+  font-weight: bold;
+}
+.save{margin: 20px;}
 .inputs{
   padding-left: 30px;
 }

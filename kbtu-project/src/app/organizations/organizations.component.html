@@ -1,8 +1,9 @@
+<div><h1> - Organizations - </h1></div>
 <div class="row">
   <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let image of images" class="slide">
-      <img src="{{ image.img }}" width="100%">
+      <img class = "im" src="{{ image.img }}" width="85%">
     </div>
   </ngx-slick-carousel>
 </div>
-<app-news></app-news>
+<div id="btn"><button routerLink="/organizations">More Information </button></div>

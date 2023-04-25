@@ -1,0 +1,49 @@
+.slick-slider {
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom:90px;
+}
+.im{
+  transition: 0.6s;
+}
+.im:hover{
+  width: 100%;
+}
+h1{
+  padding: 100px;
+  text-align: center;
+  font-family:"PlantinMTPro",serif,sans-serif;;
+  font-size: 40px;
+  font-weight: lighter;
+  display: block;
+}
+h1:after {
+  content: "";
+  display: block;
+  width: 3em;
+  max-width: 70%;
+  border-bottom: 2px solid orange;
+  margin: 1em auto 0;
+}
+#btn{
+  text-align: center;
+  padding-bottom: 90px;
+}
+#btn:after{
+  content:"";
+  display:block;
+  width: 7em;
+  max-width:100%;
+  border-bottom: 1px solid lightgrey;
+  margin: 1px auto 0;
+}

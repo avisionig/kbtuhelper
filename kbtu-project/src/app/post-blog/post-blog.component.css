@@ -1,0 +1,24 @@
+.post-border{
+  overflow: auto;
+  width: 400px;
+  max-height: 200px;
+  border-radius: 5px;
+  border: 1px solid lavender;
+  padding: 10px
+}
+h4{
+  font-size: 18px;
+  color: dodgerblue;
+}
+button{
+  color:red;
+}
+span{
+  font-size: 12px;
+}
+.not-active mat-icon{
+  color:gray;
+}
+.active mat-icon{
+  color: red;
+}

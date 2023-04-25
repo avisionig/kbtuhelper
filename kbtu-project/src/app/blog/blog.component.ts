@@ -1,6 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
-import {BlogService} from "../blog.service";
-import {Post, posts} from "../data/Post";
+import { posts} from "../data/Post";
 
 @Component({
   selector: 'app-blog',
@@ -11,11 +10,8 @@ export class BlogComponent implements OnInit{
 
   constructor() {
   }
-  posts = [...posts]
+  posts = [...posts].reverse()
   ngOnInit(): void{
 
   }
-  // addPost(post:Post){
-  //   this.blogService.addPost(post)
-  // }
 }

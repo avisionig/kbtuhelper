@@ -1,12 +1,12 @@
 .navbar{
   display: flex;
   flex-direction: row;
-  background-color: midnightblue;
+background-color: #003152;
   height: 95px;
+  width:100%;
   color:white;
   position: relative;
-  font-size: 20px;
-  padding: 20px;
+padding: 20px;
   font-family:'bebas-neue',sans-serif;
 }
 #logo{
@@ -14,8 +14,8 @@
   flex: auto;
   align-items: center;
 }
-.item{
+#item {
   display: flex;
-  padding-right: 10px;
+  padding-left: 20px;
   align-items: center;
 }

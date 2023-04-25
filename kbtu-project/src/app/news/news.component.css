@@ -1,11 +1,60 @@
 *, *::before, *::after {
   box-sizing: inherit;
-  touch-action: inherit;
+  touch-action: double-tap-zoom;
 }
 h1{
   padding: 100px;
   text-align: center;
   font-family:"PlantinMTPro",serif,sans-serif;;
+  font-size: 35px;
+  font-weight: lighter;
+  display: block;
+}
+h2{
+  padding-top: 150px;
+  text-align: center;
+  font-family:"PlantinMTPro",serif,sans-serif;;
+  font-size: 30px;
+  font-weight: lighter;
+  display: block;
+}
+h1:after{
+  content:"";
+  display:block;
+  width: 3em;
+  max-width:70%;
+  border-bottom: 2px solid orange;
+  margin: 1em auto 0;
+}
+.f-hovered{
+  font-size: 25px;
+}
+em{
+  font-size: 18px;
+  color: #757575;
+}
+.container,.o{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  vertical-align: baseline;
+  justify-content: center;
+  padding: 40px;
+  font-family: "PlantinMTPro",serif,sans-serif;
+}
+.m-lightbox-item__content, .o-timeline__item p, .f-secondary {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #757575;
+}
+.s-serif-loaded .f-h6 {
+  font-family: "PlantinMTPro",serif,sans-serif;
+}
+.news,.events,.m-event-listing{
+  margin-left: 30px;
+  margin-right: 10px;
   font-size: 40px;
   font-weight: lighter;
 }
@@ -26,7 +75,34 @@ strong{
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: space-between;
-  padding-top: 0;
+  padding-top: 10px;
+}
+.hr{
+  margin: 1em auto 0;
+}
+.m-event-listing__date-date {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 62px;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
+  font-kerning: normal;
+  line-height: 37px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased;
+}
+.m-event-listing__date-month {
+  display: inline;
+  padding-top: 0.1em;
+}
+.m-event-listing__date-year {
+  margin-top: 0;
+}
+span{
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
 }
 
 span{
@@ -34,11 +110,15 @@ span{
   padding: 0;
   background: transparent;
   font: inherit;
-  font-size: 100%;
   vertical-align: baseline;
   outline: 0;
   font-family: "PlantinMTPro",serif,sans-serif;
   font-size: 30px;
+}
+.line{
+  border-left: 1px solid lightgrey;
+  height: 400px;
+  margin-left: 40px;
 
 }
 .line{
@@ -51,4 +131,35 @@ span{
 time{
   font-size: 20px;
   color: darkgrey;
+}
+#l,#d{
+  text-align: center;
+  padding-bottom: 90px;
+}
+#l:after,#d:after{
+  content:"";
+  display:block;
+  width: 7em;
+  max-width:100%;
+  border-bottom: 1px solid lightgrey;
+  margin: 1px auto 0;
+}
+button{
+  border: 3px solid midnightblue;
+  color: #003152;
+  padding: 22px;
+  width: 220px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+button:active{
+  background-color: #003152;
+  color: white;
+}
+.btn{
+  margin: 70px;
 }

@@ -3,9 +3,18 @@
     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80" width="300px" height="200px">
   </div>
   <div class="inputs">
-    <label>Name:</label><br><input class = "ml-2.5" type="text" placeholder="User Name"><br>
-    <label>Email:</label><br><input class = "ml-2.5" type="email" placeholder="me@kbtu.kz"><br>
-    <label>Phone Number:</label><br><input class = "ml-2.5" type="tel" placeholder="+77777777777"><br>
-    <label>Faculty:</label><br><input class = "ml-2.5" type="text" placeholder="User Faculty">
+    <label>Name:</label><input class = "ml-2.5" type="text" placeholder=" User Name" [(ngModel)]="in.name"><br>
+    <label>Email:</label><input class = "ml-2.5" type="email" placeholder=" me@kbtu.kz" [(ngModel)]="in.surname"><br>
+    <label>Phone Number:</label><input class = "ml-2.5" type="tel" [(ngModel)]="in.phone"><br>
+    <label>Faculty:</label>
+    <select class="form-control" [(ngModel)]="faculty">
+      <option  *ngFor="let f of faculty" [value]="f">
+        {{f}}
+      </option>
+    </select>
+    <div class="save">
+      <button (click)="addInfo()">Save</button>
+      <button routerLink ="/blog">Write Blog</button>
+    </div>
   </div>
 </div>

@@ -1,0 +1,6 @@
+<h4>{{post.author}}</h4>
+<div class="post-border">
+  <p class="post-content">{{post.content}}</p>
+</div>
+<span class="not-active" *ngIf="!likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>
+<span class="active" *ngIf="likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>

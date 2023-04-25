@@ -5,22 +5,14 @@
   height: 95px;
   color:white;
   position: relative;
-  font-size: 20px;
   padding: 20px;
   font-family:'bebas-neue',sans-serif;
+  justify-content: center;
+  border-radius: 3px;
 }
 #logo{
   display: flex;
   flex: auto;
   align-items: center;
 }
-#account{
-  display: flex;
-  padding-left: 20px;
-  align-items: center;
-}
-#settings {
-  display: flex;
-  padding-top: 15px;
-  align-items: center;
-}
+

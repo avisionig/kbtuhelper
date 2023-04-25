@@ -4,6 +4,7 @@ export interface Post{
   content: string
   id: number
   author: string
+  likes: number;
 }
 
 // @ts-ignore
@@ -11,16 +12,19 @@ export let posts: Post[] =[
   {
     content:"Hello, World!",
     id:1,
-    author: "Ayan"
+    author: "Ayan",
+    likes:4
   },
   {
     content:"Chep chep chepak",
     id:2,
-    author: "Ernar"
+    author: "Ernar",
+    likes: 1
   },
   {
     content:"Bye, bye World(",
     id:3,
-    author: "Ayazhan"
+    author: "Ayazhan",
+    likes:5,
   }
 ]
