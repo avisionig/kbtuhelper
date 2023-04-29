@@ -11,6 +11,16 @@ export class BlogComponent implements OnInit{
   constructor() {
   }
   posts = [...posts].reverse()
+  content:string = "";
+  post(){
+    this.posts.unshift({
+      content: this.content,
+      id: 4,
+      author: "Admin",
+      likes:0,
+    })
+    this.content="";
+  }
   ngOnInit(): void{
 
   }

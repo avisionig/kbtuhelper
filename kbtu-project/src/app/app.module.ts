@@ -24,16 +24,9 @@ import { PostBlogComponent } from './post-blog/post-blog.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import { IdeasComponent } from './ideas/ideas.component';
+import {AuthInterceptor} from "./AuthInterceptor";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
-import { JwtModule } from '@auth0/angular-jwt';
-import {MatSnackBarModule} from "@angular/material/snack-bar";
-// specify the key where the token is stored in the local storage
-export const LOCALSTORAGE_TOKEN_KEY = 'kbtu-helper';
-
-// specify tokenGetter for the angular jwt package
-export function tokenGetter() {
-  return localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
-}
 
 @NgModule({
   declarations: [
@@ -65,15 +58,15 @@ export function tokenGetter() {
     MatButtonModule,
     ReactiveFormsModule,
     SlickCarouselModule,
-    MatSnackBarModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:3000', 'localhost:8080']
-      }
-    })
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 

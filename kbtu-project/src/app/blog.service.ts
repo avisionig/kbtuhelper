@@ -11,13 +11,15 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   getPosts():Observable<Post>{
-    return this.http.get<Post>(`${this.BASE_URL}`)
+    return this.http.get<Post>(`${this.BASE_URL}/blog/posts`)
   }
   addPost(newPost: Post){
-    return this.http.post<Post>(`${this.BASE_URL}`, {})
+    return this.http.post<Post>(`${this.BASE_URL}/blog/posts`, {})
   }
-  updatePost(post:Post){
-    return this.http.put<Post>(`${this.BASE_URL}`, {})
+  updatePost(post:Post, id: number){
+    return this.http.put<Post>(`${this.BASE_URL}/blog/posts/${id}`, {})
   }
-
+  deletePost(id:number){
+    return this.http.delete(`${this.BASE_URL}/blog/posts/${id}`);
+  }
 }

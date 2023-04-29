@@ -1,0 +1,38 @@
+
+.container{
+  background-color: whitesmoke;
+  justify-content: center;
+  font-family: "GTAmerica",sans-serif;
+  max-width: 90%;
+}
+.main {
+  display: flex;
+  padding: 40px;
+}
+p{
+  font-size: 20px;
+}
+img{
+  padding: 10px 10px 10px 10px;
+}
+button{
+  margin-left: 400px;
+  width: 150px;
+  padding: 13px;
+  border-radius: 8px;
+  background-color: midnightblue;
+  border:midnightblue;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size:20px;
+  display: flex;
+  flex-direction: row;
+}
+button:active{
+  background-color: orange;
+}
+h1{
+  font-weight: bold;
+  font-size: 20px;
+}

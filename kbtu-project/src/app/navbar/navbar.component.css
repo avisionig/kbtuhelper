@@ -14,8 +14,14 @@ padding: 20px;
   flex: auto;
   align-items: center;
 }
-#item {
+.item {
   display: flex;
-  padding-left: 20px;
+  padding-left: 50px;
   align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+nav{
+  display: flex;
+  flex-direction: row;
 }

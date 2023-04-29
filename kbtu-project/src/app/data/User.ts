@@ -1,31 +1,35 @@
 export interface User{
-  firstName: string
-  lastName: string
-  faculty: Faculty
-  course: number
+  id?: number;
+  username: string;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  token?: string;
 }
-
-enum Faculty{
-  SITE,BS,
-}
-
 export let users: User[]=[
   {
+    id: 1,
+    username: "",
+    email: "",
+    password: "",
     firstName: "Ayan",
     lastName: "Igali",
-    faculty: Faculty.SITE,
-    course: 2,
   },
   {
+    id: 2,
+    email: "",
+    username: "",
+    password: "",
     firstName: "Ernar",
     lastName: "Bekbolat",
-    faculty: Faculty.SITE,
-    course: 2,
   },
   {
+    id: 3,
+    email: "",
+    username: "",
+    password: "",
     firstName: "Ayazhan",
     lastName: "Baltabayeva",
-    faculty: Faculty.SITE,
-    course: 2,
   },
 ]

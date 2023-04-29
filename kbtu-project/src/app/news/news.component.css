@@ -161,5 +161,6 @@ button:active{
   color: white;
 }
 .btn{
+  width: 90%;
   margin: 70px;
 }

@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="container">
     <div class="post-form">
-    <textarea class="post-input" placeholder="Add a new post"></textarea>
-    <button class="post-button">Post</button>
+    <textarea class="post-input" placeholder="Add a new post" [(ngModel)]="this.content"></textarea>
+    <button class="post-button" (click)="post()">Post</button>
   </div>
 
   <div class="uploaded-posts">
