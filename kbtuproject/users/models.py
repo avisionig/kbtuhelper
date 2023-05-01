@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from info.models import Organization
 
-from .managers import KBTUserManager
+from .managers import UserManager
 
 
 class User(AbstractUser):
@@ -14,4 +14,7 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
-    objects = KBTUserManager()
+    objects = UserManager()
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name
