@@ -4,10 +4,17 @@ from users.models import User
 
 
 # Create your models here.
+class Tag(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True, default="")
+
+    def __str__(self):
+        return self.name.__str__()
+
+
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='author')
     content = models.TextField()
-    likes = models.ManyToManyField(User, blank=True, related_name='liker')
+    tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True, blank=True, default="")
 
     class Meta:
         verbose_name = "Post"
