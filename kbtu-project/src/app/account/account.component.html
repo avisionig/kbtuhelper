@@ -1,20 +1,28 @@
+<app-navbar></app-navbar>
 <div class="container">
-  <div class="photo">
-    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80" width="300px" height="200px">
+  <div class="account-info">
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&w=1000&q=80" width="300px" height="200px">
+    </div>
+    <div class="inputs">
+      <label>Name: {{name}}</label><br>
+      <label>Email: {{email}}</label><br>
+      <label>Organization: {{org}}</label><br>
+      <label>Faculty:</label>
+      <select class="form-control" [(ngModel)]="faculty">
+        <option  *ngFor="let f of faculties" [value]="f">
+          {{f}}
+        </option>
+      </select>
+      <div class="save">
+        <button (click)="save()">Save</button>
+        <button routerLink ="/blog">Write Blog</button>
+      </div>
+    </div>
   </div>
-  <div class="inputs">
-    <label>Name:</label><input class = "ml-2.5" type="text" placeholder=" User Name" [(ngModel)]="in.name"><br>
-    <label>Email:</label><input class = "ml-2.5" type="email" placeholder=" me@kbtu.kz" [(ngModel)]="in.surname"><br>
-    <label>Phone Number:</label><input class = "ml-2.5" type="tel" [(ngModel)]="in.phone"><br>
-    <label>Faculty:</label>
-    <select class="form-control" [(ngModel)]="faculty">
-      <option  *ngFor="let f of faculty" [value]="f">
-        {{f}}
-      </option>
-    </select>
-    <div class="save">
-      <button (click)="addInfo()">Save</button>
-      <button routerLink ="/blog">Write Blog</button>
+  <div class="uploaded-posts">
+    <div *ngFor="let post of userposts">
+      <app-post-blog [post]="post" [author_id]="id" [tag_id]="post.tag" (remove)="onDelete($event)"></app-post-blog>
     </div>
   </div>
 </div>

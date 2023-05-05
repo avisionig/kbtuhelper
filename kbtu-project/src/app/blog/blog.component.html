@@ -1,13 +1,23 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="post-form">
-    <textarea class="post-input" placeholder="Add a new post" [(ngModel)]="this.content"></textarea>
-    <button class="post-button" (click)="post()">Post</button>
+  <div class="filter">
+    <ul class="filter-list">
+      <li (click)="getPosts()"><button>all</button></li>
+      <li *ngFor="let tag of tags"><button (click)="filterPosts(tag.id)">{{tag.name}}</button></li>
+    </ul>
   </div>
-
-  <div class="uploaded-posts">
-    <div *ngFor="let post of posts">
-      <app-post-blog [post] = post></app-post-blog>
+    <div class="post-form">
+      <textarea class="post-input" placeholder="Add a new post" [(ngModel)]="this.content"></textarea>
+      <select id="tags" [(ngModel)]="tag_id">
+        <option *ngFor="let tag of tags" [value]="tag.id">
+          {{tag.name}}
+        </option>
+      </select>
+      <button class="post-button" (click)="post()">Post</button>
     </div>
+</div>
+<div class="uploaded-posts">
+  <div *ngFor="let post of posts">
+    <app-post-blog [post]=post [author_id]="post.author" [tag_id]="post.tag" (remove)="onDelete($event)"></app-post-blog>
   </div>
 </div>

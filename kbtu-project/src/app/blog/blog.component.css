@@ -27,7 +27,6 @@
 }
 .post-button{
   color: gainsboro;
-  margin-top: 10px;
   left: 140px;
   position: relative;
   border-radius: 5px;
@@ -38,8 +37,8 @@
 .post-button:hover{
   background: darkblue;
 }
+
 .uploaded-posts{
-  width: 32%;
   margin: auto;
   top: 60px;
   position: relative;
@@ -48,4 +47,27 @@
 }
 app-post-blog{
   margin: 0 5px 0 0;
+}
+.filter{
+  width: 50%;
+  align-content: center;
+  padding-top: 20px;
+  padding-left: 130px;
+}
+.filter-list li{
+  margin: 10px;
+  display: inline;
+}
+
+.filter-list button{
+  color:white;
+  background: midnightblue;
+  border: 1px midnightblue solid;
+  border-radius: 5px;
+  padding: 1px;
+  width: 100px;
+}
+#tags{
+  width: 100px;
+  height: 30px;
 }

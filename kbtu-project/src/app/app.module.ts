@@ -6,11 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BlogComponent } from './blog/blog.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-import { AccountPageComponent } from './account-page/account-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { AccountComponent } from './account/account.component';
-import { LeftComponent } from './left/left.component';
 import { NewsComponent } from './news/news.component';
 import { PostComponent } from './post/post.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -33,11 +31,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
     AppComponent,
     NavbarComponent,
     BlogComponent,
-    AccountPageComponent,
     HomePageComponent,
     TopbarComponent,
     AccountComponent,
-    LeftComponent,
     NewsComponent,
     PostComponent,
     SignUpComponent,

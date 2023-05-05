@@ -24,7 +24,7 @@
 
         <div class="button">
           <!-- Button is disabled(not clickable), if our LoginForm contains Validation Errors -->
-          <button type="submit" mat-button [disabled]="!loginForm.valid" (click)="login(this.email, this.password)">Login</button>
+          <button type="submit" mat-button [disabled]="!loginForm.valid" (click)="login()">Login</button>
         </div>
 
       </form>

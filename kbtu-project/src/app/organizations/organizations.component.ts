@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Organization} from "../data/info";
+import {InfoService} from "../info.service";
 
 @Component({
   selector: 'app-organizations',
   templateUrl: './organizations.component.html',
   styleUrls: ['./organizations.component.css']
 })
-export class OrganizationsComponent {
+export class OrganizationsComponent implements OnInit{
   images = [
     { img: "https://images.squarespace-cdn.com/content/v1/595d33df5016e19c5a035344/1523288445477-USEGVQ27OSCV89WJ6Q0N/Art+House+North+Logo-17.png?format=750w"},
     { img: "https://acf.org.uk/images/Samples/Donor/volunteer_icon.png"},
@@ -15,7 +17,14 @@ export class OrganizationsComponent {
     { img: "https://acf.org.uk/images/Samples/Donor/volunteer_icon.png"},
     { img: "https://www.cardiffmetsu.co.uk/asset/Organisation/9601/Enactus(1).png?thumbnail_width=350&thumbnail_height=350&resize_type=ResizeFitAll"}
   ];
-
+  orgs: Organization[]= []
+  constructor(private infoService: InfoService) {
+  }
+  ngOnInit(){
+    this.infoService.getOrganizations().subscribe(data =>{
+      this.orgs = data;
+    })
+  }
   slideConfig = {
     "slidesToShow": 5,
     "slidesToScroll": 1,

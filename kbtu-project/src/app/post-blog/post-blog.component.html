@@ -1,6 +1,13 @@
-<h4>{{post.author}}</h4>
-<div class="post-border">
+<h4 *ngIf="user">{{user.first_name}} {{user.last_name}}</h4>
+<div class="post-border" *ngIf="!active">
   <p class="post-content">{{post.content}}</p>
+  <p *ngIf="post.tag!= 1" class="tag">#{{tag}}</p>
+  <button *ngIf="author_id == currentUser" class="upd-button" (click)="updateButton()">Update</button>
 </div>
-<span class="not-active" *ngIf="!likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>
-<span class="active" *ngIf="likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>
+<button *ngIf="author_id == currentUser && !active" class="del-button" (click)="deletePost()">Delete</button>
+<div *ngIf="active" class="update-form">
+  <textarea [(ngModel)]="content"></textarea>
+  <button (click)="updatePost()">Submit</button>
+</div>
+<!--<span class="not-active" *ngIf="!likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>-->
+<!--<span class="active" *ngIf="likeActive"><button (click)="putLike()"><mat-icon>favorite</mat-icon></button>{{this.likes}}</span>-->

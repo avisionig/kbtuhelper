@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "95f01f91-43f4-439f-882a-24abebd7b5a0",
+		"name": "project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26791728"
+	},
+	"item": [
+		{
+			"name": "request",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"nurs@kbtu.kz\",\r\n    \"first_name\":\"Nursultan\",\r\n    \"last_name\":\"Kasymkhan\",\r\n    \"username\":\"snurs\",\r\n    \"password\":\"nurs2003\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjcwNjEyLCJpYXQiOjE2ODMyNTk4MTIsImp0aSI6IjBmYzkzNzRjNTNmYjRkOTBiMGM5YzRlZjJhZWJjM2RiIiwidXNlcl9pZCI6MTN9.FTM3U6GKDzVgDryeI_rMtD-Mog9VgRQZVlQQl5EnmCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "chopachopa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/blog/posts/9",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"blog",
+								"posts",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "nurs@kbtu.kz",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "nurs2003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/token/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lists of posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjcwNjEyLCJpYXQiOjE2ODMyNTk4MTIsImp0aSI6IjBmYzkzNzRjNTNmYjRkOTBiMGM5YzRlZjJhZWJjM2RiIiwidXNlcl9pZCI6MTN9.FTM3U6GKDzVgDryeI_rMtD-Mog9VgRQZVlQQl5EnmCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/blog/posts/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"blog",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/blog/tags/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"blog",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjcwNjEyLCJpYXQiOjE2ODMyNTk4MTIsImp0aSI6IjBmYzkzNzRjNTNmYjRkOTBiMGM5YzRlZjJhZWJjM2RiIiwidXNlcl9pZCI6MTN9.FTM3U6GKDzVgDryeI_rMtD-Mog9VgRQZVlQQl5EnmCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "author",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "tag",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "pampraimpimpam",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/blog/posts/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"blog",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/blog/tags/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"blog",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMjcxODQ1LCJpYXQiOjE2ODMyNjEwNDUsImp0aSI6ImRmN2VmYTc0ZDBkZDQxNjg5ZTY1YmI4MGNmNzU1MjNkIiwidXNlcl9pZCI6MTN9.ggpb-9Puf7Z0aip_rIrSmRgmrdalp03arqczFCTeoY8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/users/13/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"13",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -7,25 +7,30 @@ import {AuthService} from "../auth.service";
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css'],
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit{
   email = "";
   password = "";
   logged = false;
+  ngOnInit(){
+    if(localStorage.getItem('access')){
+      this.route.navigate(['../home']);
+    }
+  }
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required]),
   });
 
   constructor(private route: Router, private authService: AuthService) { }
-  login(email:string,password:string) {
+  login() {
     if(this.email && this.password)
     this.authService.login(this.email, this.password).subscribe((data)=>{
-      localStorage.setItem('token', data.token);
-      this.logged = true;
+      console.log(data)
+      localStorage.setItem('access', data.access);
+      localStorage.setItem('refresh', data.refresh);
+      // localStorage.setItem('refresh', data.refresh);
       this.route.navigate(["../home"]);
     });
-    this.route.navigate(["../home"]);
     console.log(this.email, this.password);
   }
-
 }

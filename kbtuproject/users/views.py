@@ -13,7 +13,7 @@ from .token import create_jwt_pair_for_user
 # Create your views here.
 
 @api_view(['GET', 'PUT'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def get_user(request, pk):
     try:
         user = User.objects.get(pk=pk)

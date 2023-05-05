@@ -10,7 +10,7 @@ import {AuthService} from "../auth.service";
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit{
   registerForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       username: new FormControl('', [Validators.required]),
@@ -28,10 +28,17 @@ export class SignUpComponent {
   lastname = "";
   password = "";
   constructor(private authService:AuthService, private route: Router) { }
+  ngOnInit(){
+    if(localStorage.getItem('access')){
+      this.route.navigate(['../home']);
+    }
+  }
 
   register(email: string, username: string, firstName: string, lastName: string, password:string) {
-    this.authService.register({email: email, username: username ,firstName: firstName, lastName: lastName, password: password});
-    this.route.navigate(['../login']);
+    this.authService.register(email, username ,firstName, lastName, password).subscribe(data =>{
+      console.log(data);
+      this.route.navigate(['../login'])
+    });
 
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {iEvent, News, Organization} from "./data/Organizations";
+import {iEvent, News, Organization} from "./data/info";
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +28,19 @@ export class InfoService {
   getOrgnization(id: number): Observable<Organization>{
     return this.client.get<Organization>(`${this.BASE_URL}/info/organizations/${id}`);
   }
-  postNews(news :News): Observable<News>{
-    return this.client.post<News>(`${this.BASE_URL}/info/news`, {});
+  postNews(title: string, description:string): Observable<News>{
+    return this.client.post<News>(`${this.BASE_URL}/info/news`, {
+      'title':title,
+      'description':description
+    });
   }
-  postEvent(): Observable<iEvent>{
-    return this.client.post<iEvent>(`${this.BASE_URL}/info/events`, {});
+  postEvent(title: string, description:string): Observable<iEvent>{
+    return this.client.post<iEvent>(`${this.BASE_URL}/info/events`, {
+      'title':title,
+      'description':description
+    });
   }
-  postOrganization(): Observable<Organization>{
-    return  this.client.post<Organization>(`${this.BASE_URL}/info/organizations`, {});
+  postOrganization(org:Organization): Observable<Organization>{
+    return  this.client.post<Organization>(`${this.BASE_URL}/info/organizations`, org);
   }
 }
